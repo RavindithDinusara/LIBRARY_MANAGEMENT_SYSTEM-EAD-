@@ -1,0 +1,20 @@
+SELECT 
+    i.issue_date,
+    GROUP_CONCAT(i.member_id) AS member_ids,
+    GROUP_CONCAT(m.name) AS member_names,
+    GROUP_CONCAT(m.tel) AS member_tels,
+    GROUP_CONCAT(i.book_id) AS book_ids,
+    GROUP_CONCAT(i.return_date) AS return_dates,
+    SUM(DATEDIFF(NOW(), i.return_date)) AS total_elapsed_days,
+    SUM(CASE 
+        WHEN DATEDIFF(NOW(), i.return_date) > 0 THEN DATEDIFF(NOW(), i.return_date) * 100
+        ELSE 0
+    END) AS total_fine
+FROM 
+    issuebook i
+JOIN 
+    member m ON i.member_id = m.id
+WHERE 
+    i.issue_date BETWEEN '2024-11-01' AND '2024-11-30'
+GROUP BY 
+    i.issue_date;
