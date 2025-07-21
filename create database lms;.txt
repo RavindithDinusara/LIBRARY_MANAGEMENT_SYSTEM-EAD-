@@ -17,3 +17,50 @@ SELECT issuebook.id AS issuebook_id,member.id AS member_id,member.name AS member
 CREATE TABLE returnbook (id INT(10) PRIMARY KEY AUTO_INCREMENT,mid INT(10),mname VARCHAR(50),bname VARCHAR(50),returndate VARCHAR(50),elp INT(10),fine INT(10));
 
 SELECT i.id, m.name, b.bname, i.issue_date, i.return_date FROM issuebook i JOIN member m ON i.member_id = m.id JOIN book b ON i.book_id = b.id;
+
+
+INSERT INTO member (name, address, tel, gender) VALUES
+('Ravindith Dinusara', '353/1/a', '0750743669', 'Male'),
+('Kamal Perera', '123 Main St, Colomb', '0771234567', 'Male'),
+('Nimal Silva', '456 Lake Rd, Kandy', '0712345678', 'Male'),
+('Sunil Fernando', '789 Hill St, Galle', '0723456789', 'Male'),
+('Samanthi Jayawardena', '321 Beach Rd, Matara', '0756789123', 'Female'),
+('Anusha Wijesinghe', '654 River St, Jaffna', '0767891234', 'Female'),
+('Ruwan Gunasekara', '987 Park Ave, Negombo', '0789123456', 'Male'),
+('Chathuri Senanayake', '741 Forest Dr, Kurunegala', '0791234567', 'Female'),
+('Dilshan Karunaratne', '852 Mountain Rd, Nuwara Eliya', '0702345678', 'Male'),
+('Madhavi Rathnayake', '963 Valley St, Anuradhapura', '0713456789', 'Female'),
+('Tharindu Wickramasinghe', '159 Ocean Blvd, Trincomalee', '0724567890', 'Male');
+
+
+INSERT INTO book (catname, bname, author, publisher, content, pages, edition) VALUES
+('novel', 'Robbinson cruiso', 'cruiso', 'john', 'island based story', 289, 2),
+('Fiction', 'The Road', 'Cormac McCarthy', 'Vintage', 'Post-apocalyptic novel', 287, 1),
+('Science', 'A Brief History of Time', 'Stephen Hawking', 'Bantam', 'Cosmology', 212, 1),
+('History', 'Sapiens', 'Yuval Noah Harari', 'Harper', 'Human history', 443, 1),
+('Technology', 'Clean Code', 'Robert C. Martin', 'Prentice Hall', 'Software development', 464, 1),
+('Biography', 'Steve Jobs', 'Walter Isaacson', 'Simon & Schuster', 'Biography of Steve Jobs', 656, 1),
+('Hello', 'Hello', 'Hello', 'Hello', 'Hello', 11, 11),
+('Mystery', 'The Da Vinci Code', 'Dan Brown', 'Doubleday', 'Mystery thriller', 454, 1),
+('Self-help', 'The Power of Habit', 'Charles Duhigg', 'Random House', 'Self-improvement', 371, 1),
+('Romance', 'Pride and Prejudice', 'Jane Austen', 'T. Egerton', 'Classic romance', 279, 1),
+('Adventure', 'The Hobbit', 'J.R.R. Tolkien', 'George Allen & Unwin', 'Fantasy adventure', 310, 1);
+
+
+INSERT INTO issuebook (member_id, book_id, issue_date, return_date) VALUES
+(20, 43, '2024-11-01', '2024-11-21'),
+(28, 51, '2024-12-01', '2024-12-17'),
+(30, 45, '2024-11-10', '2024-11-22'),
+(29, 52, '2024-12-27', '2024-12-31'),
+(27, 49, '2024-11-25', '2024-11-28'),
+(31, 54, '2024-11-03', '2024-11-30'),
+(26, 48, '2024-11-11', '2024-11-19');
+
+
+INSERT INTO returnbook (mid, mname, bname, returndate, elp, fine) VALUES
+(20, 'Ravindith Dinusara', 'Robbinson cruiso', '2024-11-29', 1, 100),
+(26, 'Anusha Wijesinghe', 'A Brief History of Time', '2024-12-08', 0, 0),
+(31, 'Tharindu Wickramasinghe', 'The Power of Habit', '2024-11-30', 1, 100),
+(23, 'Nimal Silva', 'The Road', '2024-12-31', 0, 0),
+(22, 'Kamal Perera', 'Robbinson cruiso', '2024-12-05', 0, 0),
+(30, 'Tharindu Wickramasinghe', 'The Hobbit', '2024-11-30', 2, 200);

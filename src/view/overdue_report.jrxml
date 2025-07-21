@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f4cbccc8-b0b3-4a7b-89d9-2b3d2d50366e">
 	<property name="ireport.zoom" value="1.0"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="105"/>
+	<property name="ireport.x" value="10"/>
+	<property name="ireport.y" value="174"/>
 	<style name="table">
 		<box>
 			<topPen lineWidth="1.0" lineColor="#000000"/>
@@ -47,7 +47,7 @@ FROM
 JOIN 
     member m ON i.member_id = m.id
 WHERE 
-    i.issue_date BETWEEN '2024-11-01' AND '2024-11-30'
+    i.issue_date BETWEEN '2025-07-01' AND '2024-07-30'
 GROUP BY 
     i.issue_date;]]>
 		</queryString>
@@ -63,7 +63,7 @@ GROUP BY
 		<field name="total_fine" class="java.math.BigDecimal"/>
 	</subDataset>
 	<subDataset name="dataset1" uuid="cd8c535d-ca72-4be2-be84-b92c28243f12"/>
-	<queryString language="SQL">
+	<queryString>
 		<![CDATA[SELECT 
     i.issue_date,
     GROUP_CONCAT(i.member_id) AS member_ids,
@@ -81,7 +81,7 @@ FROM
 JOIN 
     member m ON i.member_id = m.id
 WHERE 
-    i.issue_date BETWEEN '2024-11-01' AND '2024-11-30'
+    i.issue_date BETWEEN '2025-07-01' AND '2025-07-30'
 GROUP BY 
     i.issue_date;]]>
 	</queryString>
@@ -101,11 +101,11 @@ GROUP BY
 	<title>
 		<band height="102">
 			<staticText>
-				<reportElement x="213" y="0" width="366" height="36" backcolor="#FFFFFF" uuid="8c656aee-4c9d-451d-a49b-667d2e3feabe"/>
+				<reportElement x="213" y="33" width="366" height="36" backcolor="#FFFFFF" uuid="8c656aee-4c9d-451d-a49b-667d2e3feabe"/>
 				<textElement>
 					<font size="24" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Monthly Overdue Books Report]]></text>
+				<text><![CDATA[MONTHLY OVERDUE REPORT]]></text>
 			</staticText>
 			<line>
 				<reportElement style="table_TH" x="0" y="89" width="802" height="1" backcolor="#000000" uuid="e83ec5dd-d66c-432e-8e5d-77cf4827ce3f"/>
@@ -113,47 +113,53 @@ GROUP BY
 					<pen lineWidth="4.0" lineStyle="Solid"/>
 				</graphicElement>
 			</line>
+			<line>
+				<reportElement style="table_TH" x="-1" y="10" width="802" height="1" backcolor="#000000" uuid="c7cc171a-8443-46d4-bda8-ce0ec39cbdbf"/>
+				<graphicElement>
+					<pen lineWidth="4.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="61" splitType="Stretch">
+		<band height="86" splitType="Stretch">
 			<staticText>
-				<reportElement x="3" y="0" width="100" height="20" uuid="8872e1e1-2880-4e72-a8e5-798b0b5656a8"/>
+				<reportElement x="3" y="0" width="149" height="40" uuid="8872e1e1-2880-4e72-a8e5-798b0b5656a8"/>
 				<textElement>
-					<font size="12" isBold="true"/>
+					<font size="24" isBold="true"/>
 				</textElement>
 				<text><![CDATA[City Library]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="20" width="295" height="20" uuid="a0bfc5cf-e794-4340-894a-7e2299d172d5"/>
+				<reportElement x="3" y="40" width="295" height="20" uuid="a0bfc5cf-e794-4340-894a-7e2299d172d5"/>
 				<textElement>
 					<font size="12" isBold="false"/>
 				</textElement>
 				<text><![CDATA[Reporting Period: November 1, 2024 - November 30, 2024]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="660" y="0" width="76" height="20" uuid="aaf20aa8-4d37-48e4-aae5-b5f5e54fd939"/>
+				<reportElement x="660" y="26" width="76" height="20" uuid="aaf20aa8-4d37-48e4-aae5-b5f5e54fd939"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[City Library ,]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="660" y="20" width="142" height="20" uuid="1a62e99b-e904-4d1e-83b8-5f93fc3a73b7"/>
+				<reportElement x="660" y="46" width="142" height="20" uuid="1a62e99b-e904-4d1e-83b8-5f93fc3a73b7"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[NO : 33/1A Main streeet,]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="659" y="40" width="142" height="20" uuid="3d85f909-e844-4a44-bc0f-c72208047f08"/>
+				<reportElement x="659" y="66" width="142" height="20" uuid="3d85f909-e844-4a44-bc0f-c72208047f08"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
 				<text><![CDATA[Colombo 9.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="3" y="40" width="295" height="20" uuid="29bd8b6e-cda9-467a-92a8-13480b86371d"/>
+				<reportElement x="3" y="66" width="295" height="20" uuid="29bd8b6e-cda9-467a-92a8-13480b86371d"/>
 				<textElement>
 					<font size="12" isBold="false"/>
 				</textElement>
@@ -234,41 +240,41 @@ GROUP BY
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="64" splitType="Stretch">
+		<band height="27" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="43" width="100" height="20" uuid="0b9b0a2c-bb5f-40a0-8817-b980db5d8e48"/>
+				<reportElement x="0" y="0" width="100" height="20" uuid="0b9b0a2c-bb5f-40a0-8817-b980db5d8e48"/>
 				<textFieldExpression><![CDATA[$F{issue_date}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="111" y="43" width="43" height="20" uuid="102aafc0-473b-4b9b-99cd-feed273e1a2a"/>
+				<reportElement x="111" y="0" width="43" height="20" uuid="102aafc0-473b-4b9b-99cd-feed273e1a2a"/>
 				<textFieldExpression><![CDATA[$F{member_ids}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="195" y="43" width="100" height="20" uuid="7e461a5e-846e-430a-a3fb-c769670a670e"/>
+				<reportElement x="195" y="0" width="100" height="20" uuid="7e461a5e-846e-430a-a3fb-c769670a670e"/>
 				<textFieldExpression><![CDATA[$F{member_names}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="314" y="43" width="81" height="20" uuid="e0e727eb-1c04-4bb1-a35d-80b0faeccea9"/>
+				<reportElement x="314" y="0" width="81" height="20" uuid="e0e727eb-1c04-4bb1-a35d-80b0faeccea9"/>
 				<textFieldExpression><![CDATA[$F{member_tels}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="405" y="43" width="43" height="20" uuid="cce52add-e96d-43cb-906b-a0a187e55f45"/>
+				<reportElement x="408" y="0" width="43" height="20" uuid="cce52add-e96d-43cb-906b-a0a187e55f45"/>
 				<textFieldExpression><![CDATA[$F{book_ids}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="479" y="43" width="100" height="20" uuid="ab99664c-eb3e-4453-80f1-fd9123093974"/>
+				<reportElement x="479" y="0" width="100" height="20" uuid="ab99664c-eb3e-4453-80f1-fd9123093974"/>
 				<textFieldExpression><![CDATA[$F{return_dates}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="601" y="43" width="42" height="20" uuid="eaecc474-7d67-446a-bfc3-9ad2fe68e5de"/>
+				<reportElement x="601" y="0" width="42" height="20" uuid="eaecc474-7d67-446a-bfc3-9ad2fe68e5de"/>
 				<textFieldExpression><![CDATA[$F{total_elapsed_days}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="725" y="43" width="77" height="20" uuid="58c45031-a413-40d0-ae9b-3e0999afcd24"/>
+				<reportElement x="725" y="0" width="77" height="20" uuid="58c45031-a413-40d0-ae9b-3e0999afcd24"/>
 				<textFieldExpression><![CDATA[$F{total_fine}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="62" width="802" height="1" uuid="c3e43f84-7580-4c56-a842-12a8091a8e7c"/>
+				<reportElement x="0" y="20" width="802" height="1" uuid="c3e43f84-7580-4c56-a842-12a8091a8e7c"/>
 				<graphicElement>
 					<pen lineStyle="Dashed"/>
 				</graphicElement>
@@ -276,30 +282,41 @@ GROUP BY
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="16" splitType="Stretch"/>
-	</columnFooter>
-	<pageFooter>
-		<band height="34" splitType="Stretch">
+		<band height="39" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="14" width="97" height="20" uuid="2391935d-26cb-46b9-91ef-d6c45ae02899"/>
+				<reportElement x="1" y="19" width="53" height="20" uuid="2391935d-26cb-46b9-91ef-d6c45ae02899"/>
 				<textElement>
 					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Generated on: ]]></text>
+				<text><![CDATA[ DATE :]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="101" y="14" width="113" height="20" uuid="af1c61d7-d5f2-4643-ba55-6a1e37d6d542"/>
+				<reportElement x="599" y="18" width="80" height="20" uuid="782ac0ee-0faa-41aa-a43a-0bc6ca68cb95"/>
 				<textElement>
-					<font size="12"/>
+					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[November 28, 2024]]></text>
+				<text><![CDATA[ Certified by:]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="54" y="19" width="100" height="20" uuid="3f2c52ac-c737-4c42-adbb-faf85adf14bf"/>
+				<text><![CDATA[December 9 , 2024]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="86" splitType="Stretch">
 			<textField>
-				<reportElement x="726" y="14" width="76" height="20" uuid="804ecb21-8b25-4c90-bbf4-b97b2117a59d"/>
+				<reportElement x="364" y="66" width="76" height="20" uuid="804ecb21-8b25-4c90-bbf4-b97b2117a59d"/>
 				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="9" width="802" height="1" uuid="243b0fcc-f780-47f0-9e6c-0b17d18539a1"/>
+				<reportElement x="-1" y="-39" width="802" height="1" uuid="243b0fcc-f780-47f0-9e6c-0b17d18539a1"/>
+				<graphicElement>
+					<pen lineWidth="2.0"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="-1" y="22" width="802" height="1" uuid="0c73c4df-32cb-472e-845c-99a91bf589c7"/>
 				<graphicElement>
 					<pen lineWidth="2.0"/>
 				</graphicElement>
@@ -335,14 +352,14 @@ GROUP BY
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[5]]></text>
+				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="166" y="75" width="100" height="20" uuid="a7e39dc4-a6e2-4656-8498-b35e3030b9b3"/>
 				<textElement>
 					<font size="12"/>
 				</textElement>
-				<text><![CDATA[2100.00]]></text>
+				<text><![CDATA[]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="11" y="108" width="142" height="21" uuid="4e6147a5-d2f9-4699-9c32-26146f85141f"/>

@@ -139,7 +139,7 @@ public class VMain extends javax.swing.JFrame
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("    WELCOME TO LIBRARY MANAGEMENT SYSTEM");
+        jLabel1.setText("                 WELCOME TO CITY LIBRARY");
         jLabel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 20, 950, 80));
 

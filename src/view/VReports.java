@@ -22,10 +22,6 @@ public class VReports extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        DSF = new com.toedter.calendar.JDateChooser();
-        DST = new com.toedter.calendar.JDateChooser();
-        jLabel4 = new javax.swing.JLabel();
         btnGENERATE = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -38,22 +34,6 @@ public class VReports extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("FROM");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 45, -1));
-
-        DSF.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jPanel1.add(DSF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 170, -1));
-
-        DST.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jPanel1.add(DST, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 170, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("TO");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 27, -1));
-
         btnGENERATE.setBackground(new java.awt.Color(0, 102, 0));
         btnGENERATE.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnGENERATE.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,7 +44,7 @@ public class VReports extends javax.swing.JFrame {
                 btnGENERATEActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGENERATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 260, 30));
+        jPanel1.add(btnGENERATE, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, 270, 40));
 
         jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -76,7 +56,7 @@ public class VReports extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 260, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 260, 270, 40));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -98,7 +78,7 @@ public class VReports extends javax.swing.JFrame {
        
         try
         {
-            String reportPath = "C:\\Users\\ASUS\\Desktop\\CW_LMS_(MVC)\\LMS\\src\\view\\overdue_report.jrxml";
+            String reportPath = "D:\\A\\CODCSD23.2F-041\\14. EAD_JAVA\\UPLOADED CW\\CW_LMS_(MVC)\\LMS\\src\\view\\overdue_report.jrxml";
             JasperReport jr = JasperCompileManager.compileReport(reportPath);
             JasperPrint jp = JasperFillManager.fillReport(jr, null, DBConnection.createDBConnection());
             JasperViewer.viewReport(jp);
@@ -116,14 +96,10 @@ public class VReports extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser DSF;
-    private com.toedter.calendar.JDateChooser DST;
     private javax.swing.JButton btnGENERATE;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

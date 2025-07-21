@@ -47,6 +47,7 @@ public class VLogin extends javax.swing.JFrame {
         txtusername.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel1.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 190, 280, 40));
 
+        btnlogin.setBackground(new java.awt.Color(204, 204, 204));
         btnlogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnlogin.setText("Login");
         btnlogin.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -57,6 +58,7 @@ public class VLogin extends javax.swing.JFrame {
         });
         jPanel1.add(btnlogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 390, 100, 40));
 
+        btncancel.setBackground(new java.awt.Color(204, 204, 204));
         btncancel.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btncancel.setText("Cancel");
         btncancel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
