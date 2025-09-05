@@ -7,7 +7,6 @@ A **desktop-based Library Management System** built with **Java Swing** in **Net
 ![Java](https://img.shields.io/badge/Java-Swing-orange?style=flat-square&logo=java)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-blue?style=flat-square&logo=mysql)
 ![NetBeans](https://img.shields.io/badge/IDE-NetBeans-1f6f8b?style=flat-square&logo=apache-netbeans-ide)
-![License](https://img.shields.io/github/license/your-username/library-management-system)
 
 ---
 
